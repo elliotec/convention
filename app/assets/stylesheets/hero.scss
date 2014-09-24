@@ -1,0 +1,50 @@
+.hero {
+  $hero-background-top: darken($base-accent-color, 25); 
+  $hero-background-bottom: adjust-hue($hero-background-top, -70);
+  $hero-color: white;
+  $gradient-angle: 10deg;
+
+  @include linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top);
+  opacity: .7;
+  top:0;
+
+
+  .hero-inner {
+    height: 22em;
+    @include outer-container;
+    @include clearfix;
+    padding: 3em;
+    text-align: center;
+    color: $hero-color;
+
+    @include media($large-screen) {
+      height: 40em;
+    }
+
+    .hero-copy {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+
+      button {
+        @include button(simple, $base-background-color);
+        margin-top: 2em;
+        font-size: $base-font-size;
+        outline: none;
+        position: relative;
+      }
+
+      h1 {
+        @include clearfix;
+        font-size: 1.6em;
+        margin-bottom: .5em;
+
+        @include media($medium-screen) {
+          font-size: $h1-font-size;
+        }
+      }
+    }
+  }
+}
+

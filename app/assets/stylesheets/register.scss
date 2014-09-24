@@ -1,0 +1,9 @@
+section.register {
+  background-color: white;
+
+  .biglogo {
+    @include span-columns(10);
+    @include shift(1);
+    padding: 3em;
+  }
+}
