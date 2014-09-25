@@ -6,4 +6,153 @@ section.register {
     @include shift(1);
     padding: 3em;
   }
+
+  .intro-text {
+    $intro-text-width: 60%;
+
+    padding-top: 2em;
+    padding-bottom: 5em;
+    text-align: center;
+
+    h2 {
+
+      color: $purps;
+      font-family: $sans-serif;
+      font-weight: 700;
+      margin-bottom: .3em;
+
+      @include media($large-screen) {
+        font-size: 3em;
+        margin-bottom: .4em;
+      }
+    }
+
+    h3 {
+      background: $base-accent-color;
+      color: white;
+      display: inline-block;
+      font-size: .7em;
+      font-weight: 800;
+      margin-bottom: 2em;
+      padding: 3px 8px;
+      text-transform: uppercase;
+
+      @include media($large-screen) {
+        margin-bottom: 3.3em;
+      }
+    }
+
+    h4 {
+      color: lighten($base-font-color, 20);
+      font-size: 1.3em;
+      font-weight: 300;
+      line-height: 1.4em;
+      margin: 0 auto 1em;
+
+      @include media($large-screen) {
+        font-size: 1.7em;
+        line-height: 1.35em;
+        margin: 0 auto 1em;
+        width: $intro-text-width;
+      }    
+    }
+
+    p {
+      margin: auto;
+
+      @include media($large-screen) {
+        width: $intro-text-width;
+      }
+
+      a {
+        font-size: .8em;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        span {
+          font-size: 1.3em;
+          line-height: 0;
+        }
+      }
+    }
+  }
+  @mixin grid-item-columns($columns) {
+    width: (100% / 12) * $columns;
+  }
+
+  .grid-items {
+    $grid-items-background: $base-background-color;
+    $grid-item-background: desaturate($base-accent-color, 30); 
+    $grid-item-colors:
+      desaturate($logo-blue, 30),
+      desaturate($logo-green, 10),
+      desaturate($logo-yellow, 30);
+
+    $grid-item-border-size: 9px;
+    $grid-item-columns: 4;
+    $grid-item-big-columns: 8;
+    $grid-item-color: white;
+    $grid-item-height: 14em;
+
+    @include clearfix;
+      
+    .grid-item {
+      @include transition (all 0.2s ease-in-out);
+      height: $grid-item-height;
+      background: $grid-item-background;
+      width: 100%;
+      overflow: hidden;
+      float: left;
+      padding: 2em;
+      border-top: 0;
+      border-bottom: $grid-item-border-size solid $grid-items-background;
+      border-left: $grid-item-border-size /2 solid $grid-items-background;
+      border-right: $grid-item-border-size /2 solid $grid-items-background;
+      text-align: center;
+      cursor: pointer;
+
+      @include media($large-screen) {
+        @include grid-item-columns($grid-item-columns);
+      }
+
+      @for $i from 1 to 4 { // assign colors from $grid-item-colors list
+        &:nth-child(#{$i}) {
+          $background-from-list: nth($grid-item-colors, $i);
+          background-color: $background-from-list;
+          box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10);
+          &:hover {
+            background-color: darken($background-from-list, 10);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+          }
+        }
+      }
+    }
+
+    .grid-item img {
+      display: block;
+      height: 3em;
+      margin: auto;
+      margin-bottom: 1em;
+    }
+
+    .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: .4em;
+    }
+    .grid-item h6 {
+      color: $badred;
+      font-size: 1.1em;
+    }
+
+    .grid-item p {
+      margin: auto;
+      color: transparentize($grid-item-color, .3);
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+  }
 }
