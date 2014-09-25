@@ -10,12 +10,12 @@ section.register {
   .intro-text {
     $intro-text-width: 60%;
 
+    @include clearfix;
     padding-top: 2em;
     padding-bottom: 5em;
     text-align: center;
 
     h2 {
-
       color: $purps;
       font-family: $sans-serif;
       font-weight: 700;
@@ -25,21 +25,20 @@ section.register {
         font-size: 3em;
         margin-bottom: .4em;
       }
+
     }
 
     h3 {
-      background: $base-accent-color;
-      color: white;
-      display: inline-block;
-      font-size: .7em;
-      font-weight: 800;
-      margin-bottom: 2em;
-      padding: 3px 8px;
-      text-transform: uppercase;
+      color: $goldenrod;
+      font-family: $sans-serif;
+      font-weight: 700;
+      margin-bottom: .3em;
 
       @include media($large-screen) {
-        margin-bottom: 3.3em;
+        font-size: 2.25em;
+        margin-bottom: .4em;
       }
+
     }
 
     h4 {
@@ -86,13 +85,16 @@ section.register {
     $grid-item-colors:
       desaturate($logo-blue, 30),
       desaturate($logo-green, 10),
-      desaturate($logo-yellow, 30);
+      desaturate($logo-yellow, 30),
+      desaturate($badred, 30),
+      desaturate($goldenrod, 30);
 
     $grid-item-border-size: 9px;
     $grid-item-columns: 4;
-    $grid-item-big-columns: 8;
+    $grid-item-big-columns: 12;
+    $grid-item-med-columns: 6;
     $grid-item-color: white;
-    $grid-item-height: 14em;
+    $grid-item-height: 16em;
 
     @include clearfix;
       
@@ -115,7 +117,7 @@ section.register {
         @include grid-item-columns($grid-item-columns);
       }
 
-      @for $i from 1 to 4 { // assign colors from $grid-item-colors list
+      @for $i from 1 to 5 { // assign colors from $grid-item-colors list
         &:nth-child(#{$i}) {
           $background-from-list: nth($grid-item-colors, $i);
           background-color: $background-from-list;
@@ -137,13 +139,36 @@ section.register {
       margin-bottom: 1em;
     }
 
+    .grid-item-big {
+      @include media($large-screen) {
+        @include grid-item-columns($grid-item-big-columns);
+      }
+      p {
+        @include media($medium-screen) {
+          max-width: 60%;
+        }  
+      }
+    }
+
+    .grid-item-med {
+      @include media($large-screen) {
+        @include grid-item-columns($grid-item-med-columns);
+        @include shift(3);
+      }
+      p {
+        @include media($medium-screen) {
+          max-width: 40%;
+        }  
+      }
+    }
+
     .grid-item h1 {
       color: $grid-item-color;
       font-size: 1.3em;
       margin-bottom: .4em;
     }
     .grid-item h6 {
-      color: $badred;
+      color: white;
       font-size: 1.1em;
     }
 
@@ -155,4 +180,5 @@ section.register {
       }
     }
   }
+  text-align: center;
 }
