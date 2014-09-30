@@ -1,0 +1,52 @@
+#slcimg {
+  background-image: url("../images/Salt_Lake_skyline_big.png");
+  background-size: cover;
+  height: 50em;
+}
+
+section.hotels {
+  background-color: white;
+
+  .bullets {
+    $icon-bullet-size: 3.5em;
+    $colors:
+      desaturate($logo-blue, 30),
+      desaturate($logo-green, 10),
+      $goldenrod,
+      desaturate($logo-yellow, 30),
+      desaturate($badred, 30),
+      $purps;
+
+
+    padding: 2em;
+    overflow: auto;
+    margin-bottom: $base-line-height;
+    text-align: center;
+    
+    .three-col-bullet {
+      @include media($large-screen) {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
+
+    .bullet-content {
+      margin-bottom: 2em;
+    }
+    
+    @for $i from 1 through length($colors) {
+      li:nth-of-type(#{$i}) h2 {
+        $color-from-list: nth($colors, $i);
+        color: $color-from-list;
+      }
+    }
+
+    h2 {
+      font-size: $icon-bullet-size /2.5;
+      padding-top: $icon-bullet-size /7;
+      margin-bottom: $icon-bullet-size /6;
+      border-bottom: 1px solid transparentize($base-font-color, .8);
+      display: inline-block;
+    }
+  }
+}
