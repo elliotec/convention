@@ -10,6 +10,6 @@ gem 'rails', '4.1.4'
 gem 'sass'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
-gem 'sqlite3'
+gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
