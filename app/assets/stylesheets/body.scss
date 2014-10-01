@@ -84,6 +84,17 @@ body {
     }    
   }
 
+  h5 {
+    color: desaturate($logo-green, 10);
+    font-weight: 500;
+    margin-bottom: .3em;
+
+    @include media($large-screen) {
+      font-size: 2em;
+      margin-bottom: .4em;
+    }
+  }
+
   p {
     margin: auto;
 

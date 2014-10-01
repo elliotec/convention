@@ -52,4 +52,12 @@ $(document).ready ($) ->
     backgroundPosition: bgPosMovement
     ease: Linear.easeNone
   )).addTo(controller)
+
+  new ScrollScene(
+    offset: -120
+    triggerElement: "#eventsimg"
+  ).setTween(TweenMax.to("#eventsimg", 1,
+    backgroundPosition: bgPosMovement
+    ease: Linear.easeNone
+  )).addTo(controller)
   return
