@@ -44,4 +44,12 @@ $(document).ready ($) ->
     backgroundPosition: bgPosMovement
     ease: Linear.easeNone
   )).addTo(controller)
+
+  new ScrollScene(
+    offset: -120
+    triggerElement: "#recognitionimg"
+  ).setTween(TweenMax.to("#recognitionimg", 1,
+    backgroundPosition: bgPosMovement
+    ease: Linear.easeNone
+  )).addTo(controller)
   return
