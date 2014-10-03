@@ -23,8 +23,8 @@
 
     .hero-copy {
       position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 60%;
+      transform: translateY(-40%);
       text-align: center;
 
       button {
@@ -38,6 +38,7 @@
       h1 {
         @include clearfix;
         font-size: 1.6em;
+        font-weight: 400;
         margin-bottom: .5em;
 
         @include media($medium-screen) {

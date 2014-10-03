@@ -1,10 +1,12 @@
-.centered-navigation {
+header.centered-navigation {
   $centered-navigation-padding: 1em;
-  $centered-navigation-logo-height: 2em;
+  $centered-navigation-logo-height-big: 75%;
+  $centered-navigation-logo-height-small: 25%;
   $centered-navigation-background: #333;
   $centered-navigation-color: #fff; //transparentize($base-font-color, 0.3);
   $centered-navigation-color-hover: darken(#fff, 50);
-  $centered-navigation-height: 60px;
+  $centered-navigation-height-big: 180px;
+  $centered-navigation-height-small: 60px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
   $centered-navigation-submenu-width: 12em;
@@ -13,23 +15,33 @@
 
   position: fixed;
   top: 0;
+  left: 0;
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
   font-family: $sans-serif;
-  height: $centered-navigation-height;
+  height: $centered-navigation-height-big;
   width: 100%;
   z-index: 9999;
+  overflow: hidden;
   
+  .logo img {
+    position: relative;
+    margin-bottom: -$centered-navigation-logo-height-small / 3;
+    max-height: $centered-navigation-logo-height-big;
+    opacity: .6;
+    margin-top: 5%;
+  }
+
   // Mobile view
 
   .mobile-logo {
     display: inline;    
     float: left;
-    max-height: $centered-navigation-height;
+    max-height: $centered-navigation-height-small;
     padding-left: $centered-navigation-padding;
 
     img {
-      max-height: $centered-navigation-height;
+      max-height: $centered-navigation-height-small;
       opacity: .6;
       padding: .8em 0;
     }
@@ -44,7 +56,7 @@
     display: block;
     float: right;
     font-weight: 700;
-    line-height: $centered-navigation-height;
+    line-height: $centered-navigation-height-small;
     margin: 0;
     padding-right: $centered-navigation-submenu-padding;
     text-transform: uppercase;
@@ -94,7 +106,7 @@
   ul li.nav-link {
     background: $centered-navigation-background;
     display: block;
-    line-height: $centered-navigation-height;
+    line-height: $centered-navigation-height-small;
     overflow: hidden;
     padding-right: $centered-navigation-submenu-padding;
     text-align: right;
@@ -104,7 +116,7 @@
     @include media($horizontal-bar-mode) {
       background: transparent;
       display: inline;
-      line-height: $centered-navigation-height;  
+      line-height: $centered-navigation-height-small;  
 
       a {
         padding-right: $centered-navigation-item-padding;
@@ -129,12 +141,6 @@
     @include media($large-screen) {
       display: inline;
     }
-  }
-
-  .logo img {
-    margin-bottom: -$centered-navigation-logo-height / 3;
-    max-height: $centered-navigation-logo-height;
-    opacity: .6;
   }
 
   // Sub menus
@@ -221,7 +227,7 @@
       padding-right: 0;
 
       @include media($horizontal-bar-mode) {
-        line-height: $centered-navigation-height / 1.3;
+        line-height: $centered-navigation-height-small / 1.3;
 
         &:first-child > a {
           border-top-left-radius: $base-border-radius;
