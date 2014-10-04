@@ -10,6 +10,7 @@ $(document).ready ($) ->
     return
   return
 
+#if Modernizr.mq('(min-width: 640px)').matches
 $ ->
   $("#header_nav").data "size", "big"
   $("#header_logo").data "size", "big"
@@ -17,30 +18,23 @@ $ ->
 
 $(window).scroll ->
   if $(document).scrollTop() > 0
-    if $("#header_nav").data("size") is "big"
-      $("#header_nav").data "size", "small"
+    if $("#header_nav, #header_logo").data("size") is "big"
+      $("#header_nav, #header_logo").data "size", "small"
       $("#header_nav").stop().animate
-         height: "60px"
-       , 250
-  else
-    if $("#header_nav").data("size") is "small"
-      $("#header_nav").data "size", "big"
-      $("#header_nav").stop().animate
-         height: "180px"
-       , 250
-
-  if $(document).scrollTop() > 0
-    if $("#header_logo").data("size") is "big"
-      $("#header_logo").data "size", "small"
+        height: "60px"
+        , 250
       $("#header_logo").stop().animate
         height: "3em"
-      , 250 
+        , 250
   else
-    if $("#header_logo").data("size") is "small"
-      $("#header_logo").data "size", "big"
+    if $("#header_nav, #header_logo").data("size") is "small"
+      $("#header_nav, #header_logo").data "size", "big"
+      $("#header_nav").stop().animate
+        height: "180px"
+        , 250
       $("#header_logo").stop().animate
         height: "9em"
-      , 250
+        , 250
   return
 
 ########## Parallax Pictures ###########

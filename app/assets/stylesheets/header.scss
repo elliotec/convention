@@ -15,15 +15,17 @@ header.centered-navigation {
 
   position: fixed;
   top: 0;
-  left: 0;
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
   font-family: $sans-serif;
-  height: $centered-navigation-height-big;
+  height: $centered-navigation-height-small;
   width: 100%;
   z-index: 9999;
-  overflow: hidden;
   
+  @include media($large-screen) {
+    height: $centered-navigation-height-big;
+  }
+
   .logo img {
     position: relative;
     margin-bottom: -$centered-navigation-logo-height-small / 3;
