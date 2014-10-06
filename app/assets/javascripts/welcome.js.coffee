@@ -10,32 +10,33 @@ $(document).ready ($) ->
     return
   return
 
-#if Modernizr.mq('(min-width: 640px)').matches
-$ ->
-  $("#header_nav").data "size", "big"
-  $("#header_logo").data "size", "big"
-  return
+enquire.register "screen and (min-width:640px)",
+  match: ->
+    $ ->
+      $("#header_nav").data "size", "big"
+      $("#header_logo").data "size", "big"
+      return
 
-$(window).scroll ->
-  if $(document).scrollTop() > 0
-    if $("#header_nav, #header_logo").data("size") is "big"
-      $("#header_nav, #header_logo").data "size", "small"
-      $("#header_nav").stop().animate
-        height: "60px"
-        , 250
-      $("#header_logo").stop().animate
-        height: "3em"
-        , 250
-  else
-    if $("#header_nav, #header_logo").data("size") is "small"
-      $("#header_nav, #header_logo").data "size", "big"
-      $("#header_nav").stop().animate
-        height: "180px"
-        , 250
-      $("#header_logo").stop().animate
-        height: "9em"
-        , 250
-  return
+    $(window).scroll ->
+      if $(document).scrollTop() > 0
+        if $("#header_nav, #header_logo").data("size") is "big"
+          $("#header_nav, #header_logo").data "size", "small"
+          $("#header_nav").stop().animate
+            height: "60px"
+            , 250
+          $("#header_logo").stop().animate
+            height: "3em"
+            , 250
+      else
+        if $("#header_nav, #header_logo").data("size") is "small"
+          $("#header_nav, #header_logo").data "size", "big"
+          $("#header_nav").stop().animate
+            height: "180px"
+            , 250
+          $("#header_logo").stop().animate
+            height: "9em"
+            , 250
+      return
 
 ########## Parallax Pictures ###########
 $(document).ready ($) ->

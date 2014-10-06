@@ -63,7 +63,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (5.4.1)
-    modernizr-rails (2.7.1)
     multi_json (1.10.1)
     neat (1.5.1)
       bourbon (>= 3.1)
@@ -130,7 +129,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-  modernizr-rails
   neat
   pg
   rails (= 4.1.4)
