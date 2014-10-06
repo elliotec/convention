@@ -35,8 +35,8 @@ section.agenda {
       border-bottom: $grid-item-border;
       cursor: pointer;
 
-      ol {
-        @extend %default-ol;
+      ul {
+        @extend %default-ul;
         color: lighten($base-font-color, 20);
         font-size: .85em;
       }
@@ -58,9 +58,11 @@ section.agenda {
       }
 
     .grid-item h1 {
-        color: lighten($base-font-color, 10);
+        color: white;//lighten($base-font-color, 10);
+        background-color: desaturate($badred, 10);
         font-size: 1.3em;
         margin-bottom: .4em;
+        padding: .4em;
       }
 
     .grid-item p {
