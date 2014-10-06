@@ -8,7 +8,7 @@ section.service {
     $tab-content-background: lighten($tab-border-color, 10);
     $tab-active-color: $tab-content-background;
     $tab-inactive-color: $base-background-color;
-    $vertical-tabs-height: em(800);
+    $vertical-tabs-height: em(750);
     $vertical-tab-mode: $medium-screen;
 
     @include clearfix;
