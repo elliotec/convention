@@ -25,7 +25,7 @@ section.service {
         display: inline;
         float: left;
         height: $vertical-tabs-height;
-        width: 35%;
+        width: 40%;
       }
     }
 
@@ -58,7 +58,7 @@ section.service {
 
       @include media($vertical-tab-mode) {
         @include inline-block;
-        @include size(65% $vertical-tabs-height);
+        @include size(60% $vertical-tabs-height);
         background-color: $tab-content-background;
       }
     }
@@ -66,12 +66,13 @@ section.service {
     .vertical-tab-content {
       background-color: $tab-content-background;
       font-size: 1.3em;
-      margin-top: 2em;
-      padding: $base-spacing $gutter * 3;
+      padding: $base-spacing $gutter;
 
       @include media($vertical-tab-mode) {
         border: none;
         display: none;
+        padding-top: 2em;
+        padding: $base-spacing $gutter * 3;
       }
     }
 

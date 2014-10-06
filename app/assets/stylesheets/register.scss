@@ -27,7 +27,7 @@ section.register {
     $grid-item-big-columns: 12;
     $grid-item-med-columns: 6;
     $grid-item-color: white;
-    $grid-item-height: 14em;
+    $grid-item-height: 10em;
 
     @include clearfix;
       
@@ -73,6 +73,8 @@ section.register {
     }
 
     .grid-item-big {
+      height: 17em;
+
       @include media($large-screen) {
         @include grid-item-columns($grid-item-big-columns);
       }

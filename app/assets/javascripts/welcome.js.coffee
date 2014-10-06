@@ -10,7 +10,7 @@ $(document).ready ($) ->
     return
   return
 
-enquire.register "screen and (min-width:640px)",
+enquire.register "screen and (min-width:900px)",
   match: ->
     $ ->
       $("#header_nav").data "size", "big"

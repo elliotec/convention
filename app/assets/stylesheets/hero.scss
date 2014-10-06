@@ -10,25 +10,30 @@
 
 
   .hero-inner {
-    height: 22em;
+    height: 25em;
     @include outer-container;
     @include clearfix;
     padding: 3em;
     text-align: center;
     color: $hero-color;
 
-    @include media($large-screen) {
+    @include media($medium-screen) {
       height: 40em;
     }
 
     .hero-copy {
       position: relative;
-      top: 60%;
-      transform: translateY(-40%);
+      top: 50%;
+      transform: translateY(-50%);
       text-align: center;
 
+      @include media($large-screen) {
+        top: 60%;
+        transform: translateY(-40%)
+      }
+
       button {
-        @include button(simple, $base-background-color);
+        @include button(simple, $logo-blue);
         margin-top: 2em;
         font-size: $base-font-size;
         outline: none;
