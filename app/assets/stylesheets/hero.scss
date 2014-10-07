@@ -18,9 +18,9 @@
 
     .hero-copy {
       position: relative;
+      text-align: center;
       top: 25em;
       @include transform(translateY(-25em));
-      text-align: center;
 
       @include media($medium-screen) {
         top: 40em;

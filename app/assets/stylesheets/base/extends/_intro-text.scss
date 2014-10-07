@@ -7,15 +7,15 @@
     text-align: center;
 
     h2 {
-      margin-top: 1em;
+      margin-top: 1.25em;
       color: $purps;
       font-family: $sans-serif;
       font-weight: 700;
-      margin-bottom: .3em;
+      margin-bottom: .1em;
 
       @include media($large-screen) {
         font-size: 3em;
-        margin-bottom: .4em;
+        margin-bottom: .1em;
       }
     }
 
@@ -49,7 +49,8 @@
     }
 
     h5 {
-      margin-top: 1.25em;
+      margin-top: 1em;
+      padding-top: 1em;
       color: desaturate($logo-green, 10);
       font-weight: 500;
       margin-bottom: .3em;
