@@ -1,5 +1,5 @@
 ########### Header #############
-$(document).ready ->
+$(document).ready ($) ->
   menu = $(".centered-navigation-menu")
   menuToggle = $(".centered-navigation-menu-button")
   $(menuToggle).on "click", (e) ->
@@ -9,24 +9,21 @@ $(document).ready ->
       menu.removeAttr "style"  if menu.is(":hidden")
       return
     return
-  return
 
-$("html").click ->
-  $(".centered-navigation-menu").hide()
-  return
+  if document.documentElement.clientWidth < 900
+    $("html").click ->
+      $(".centered-navigation-menu").hide()
+      return
 
-    
-if document.documentElement.clientWidth < 900 
-  $ ->
-    $(".centered-navigation-menu").on
-      click: ->
-        $(".centered-navigation-menu").hide()
-        return
-    , "a"
-    return
+    $ ->
+      $(".centered-navigation-menu").on
+        click: ->
+          $(".centered-navigation-menu").hide()
+          return
+      , "a"
+      return
 
-enquire.register "screen and (min-width:900px)",
-  match: ->
+  if document.documentElement.clientWidth > 900
     $ ->
       $("#header_nav").data "size", "big"
       $("#header_logo").data "size", "big"
@@ -122,8 +119,7 @@ $(document).ready ($) ->
     $(".js-vertical-tab-accordion-heading[rel^='" + activeTab + "']").addClass "is-active"
     return
 
-
-  # if in accordion mode 
+  # accordion mode 
   $(".js-vertical-tab-accordion-heading").click (event) ->
     event.preventDefault()
     $(".js-vertical-tab-content").hide()
@@ -136,7 +132,6 @@ $(document).ready ($) ->
     return
 
 ##### Append hash to URL ######
-
 $ ->
   currentHash = "#"
   $(document).scroll ->
@@ -144,7 +139,7 @@ $ ->
       top = window.pageYOffset
       distance = top - $(this).offset().top
       hash = $(this).attr('href')
-      if distance < 10 and distance > -10 and currentHash isnt hash
+      if distance < 20 and distance > -20 and currentHash isnt hash
         location.replace(hash)
         currentHash = hash
       return
