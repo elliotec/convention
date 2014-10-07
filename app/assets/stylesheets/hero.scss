@@ -23,8 +23,8 @@
 
     .hero-copy {
       position: relative;
-      top: 40%;
-      transform: translateY(-60%);
+      top: 30%;
+      transform: translateY(-70%);
       text-align: center;
 
       @include media($large-screen) {
