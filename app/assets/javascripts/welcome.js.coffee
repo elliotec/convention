@@ -119,3 +119,19 @@ $(document).ready ($) ->
     $(".js-vertical-tab").removeClass "is-active"
     $(".js-vertical-tab[rel^='" + accordion_activeTab + "']").addClass "is-active"
     return
+
+##### Append hash to URL ######
+
+$ ->
+  currentHash = "#"
+  $(document).scroll ->
+    $('.anchor').each ->
+      top = window.pageYOffset
+      distance = top - $(this).offset().top
+      hash = $(this).attr('href')
+      if distance < 10 and distance > -10 and currentHash isnt hash
+        location.replace(hash)
+        currentHash = hash
+      return
+    return
+  return

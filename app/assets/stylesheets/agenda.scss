@@ -33,7 +33,7 @@ section.agenda {
       border-left: $grid-item-border;
       border-right: $grid-item-border;
       border-bottom: $grid-item-border;
-      cursor: pointer;
+      cursor: default;
 
       ul {
         @extend %default-ul;

@@ -20,7 +20,7 @@
   .footer-links {
     @include clearfix;
     margin-bottom: $base-spacing;
-
+    
     @include media($medium-screen) {
       @include shift(3);
     }

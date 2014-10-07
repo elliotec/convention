@@ -3,6 +3,11 @@ html,body {
   width: 100%;
 }
 
+#top {
+  position: absolute;
+  top:-100px;
+}
+
 body {
   @extend %intro-text;
 
