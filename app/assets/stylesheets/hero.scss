@@ -9,7 +9,6 @@
   opacity: .7;
   top:0;
 
-
   .hero-inner {    
     @include outer-container;
     @include clearfix;
@@ -20,12 +19,12 @@
     .hero-copy {
       position: relative;
       top: 5%;
-      transform: translateY(-95%);
+      @include transform(translateY(-95%));
       text-align: center;
 
-      @include media($large-screen) {
-        top: 60%;
-        transform: translateY(-40%)
+      @include media($medium-screen) {
+        top: 40em;
+        @include transform(translateY(-25em));
       }
 
       button {
@@ -38,13 +37,18 @@
 
       h1 {
         @include clearfix;
-        font-size: 1.6em;
+        font-size: 1.5em;
         font-weight: 400;
         margin-bottom: .5em;
 
         @include media($medium-screen) {
           font-size: $h1-font-size;
         }
+      }
+
+      span {
+        margin-top: 2em;
+        @include animation-iteration-count(infinite);
       }
     }
   }
