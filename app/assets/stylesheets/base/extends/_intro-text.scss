@@ -3,11 +3,11 @@
     $intro-text-width: 60%;
 
     @include clearfix;
-    padding: 2em 1em 5em;
+    padding: 1em 1em 2.5em;
     text-align: center;
 
     h2 {
-      margin-top: 1.25em;
+      margin-top: 1em;
       color: $purps;
       font-family: $sans-serif;
       font-weight: 700;
@@ -20,7 +20,7 @@
     }
 
     h3 {
-      margin-top: 1.25em;
+      margin-top: .25em;
       color: $goldenrod;
       font-family: $sans-serif;
       font-weight: 700;
@@ -33,7 +33,7 @@
     }
 
     h4 {
-      margin-top: 1.25em;
+      margin-top: .25em;
       color: lighten($base-font-color, 20);
       font-size: 1.3em;
       font-weight: 300;
@@ -68,9 +68,8 @@
       }
 
       a {
-        font-size: .8em;
+        font-size: .9em;
         font-weight: 400;
-        text-transform: uppercase;
 
         span {
           font-size: 1.3em;

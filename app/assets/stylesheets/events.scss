@@ -6,6 +6,16 @@
 
 section.events{
   @extend %bullets;
-
   border-bottom: none;
+
+  .product {
+    background-color: $logo-blue;
+    color: white;
+    padding-top: 4em;
+    padding-bottom: 4em;
+
+    h3 {
+      color: lighten($goldenrod, 10);
+    }
+  }
 }

@@ -3,12 +3,6 @@ section.register {
   padding-bottom: 3em;
   text-align: center;
 
-  .biglogo {
-    @include span-columns(10);
-    @include shift(1);
-    padding: 3em;
-  }
-
   @mixin grid-item-columns($columns) {
     width: (100% / 12) * $columns;
   }
@@ -38,7 +32,7 @@ section.register {
       width: 100%;
       overflow: hidden;
       float: left;
-      padding: 2em;
+      padding: 1em 2em 2em;
       border-top: 0;
       border-bottom: $grid-item-border-size solid $grid-items-background;
       border-left: $grid-item-border-size /2 solid $grid-items-background;
@@ -77,6 +71,7 @@ section.register {
 
       @include media($large-screen) {
         @include grid-item-columns($grid-item-big-columns);
+        height: 13em;
       }
       p {
         @include media($medium-screen) {
