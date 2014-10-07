@@ -1,14 +1,29 @@
 ########### Header #############
-$(document).ready ($) ->
+$(document).ready ->
   menu = $(".centered-navigation-menu")
   menuToggle = $(".centered-navigation-menu-button")
   $(menuToggle).on "click", (e) ->
     e.preventDefault()
+    e.stopPropagation()
     menu.slideToggle ->
       menu.removeAttr "style"  if menu.is(":hidden")
       return
     return
   return
+
+$("html").click ->
+  $(".centered-navigation-menu").hide()
+  return
+
+    
+if document.documentElement.clientWidth < 900 
+  $ ->
+    $(".centered-navigation-menu").on
+      click: ->
+        $(".centered-navigation-menu").hide()
+        return
+    , "a"
+    return
 
 enquire.register "screen and (min-width:900px)",
   match: ->
