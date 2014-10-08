@@ -83,6 +83,7 @@ section.agenda {
       }
     }
   }
+
   .table-minimal {
     $table-border-color: $base-border-color;
     $table-border: 1px solid $table-border-color;
@@ -91,7 +92,7 @@ section.agenda {
     $table-hover-color: darken($table-background, 2);
     $table-stripe-color: darken($table-background, 4);
     $table-stripe-color-hover: darken($table-stripe-color, 5);
-    $table-padding: 0.5em;
+    $table-padding: 1em;
 
     border-collapse: separate;
     border-spacing: 0;
