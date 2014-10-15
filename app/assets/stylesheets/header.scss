@@ -295,3 +295,8 @@ header.centered-navigation {
     }
   }
 }
+ #header_logo {
+  @include media($large-screen) {
+    height: 9em;
+  }
+ }

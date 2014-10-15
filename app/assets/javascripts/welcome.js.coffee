@@ -23,6 +23,7 @@ $(document).ready ($) ->
       , "a"
       return
 
+$(document).ready ($) ->
   if document.documentElement.clientWidth > 900
     $ ->
       $("#header_nav").data "size", "big"
